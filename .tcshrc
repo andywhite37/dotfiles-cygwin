@@ -1,0 +1,167 @@
+# .tcshrc
+
+###############################################################################
+# Environment variables
+###############################################################################
+
+setenv HOME '/home/awhite'
+setenv DROPBOX '/cygdrive/c/Home/Dropbox'
+
+# Add to path (only for cygwin command-line use)
+#setenv PATH     ".:/cygdrive/c/Home/cygbin/:${HOME}/bin:${PATH}"
+#setenv PATH     ".:${PATH}"
+if ("${PATH}" !~ "${HOME}/bin"*) then
+    setenv PATH     "${HOME}/bin:${PATH}"
+    setenv PATH     ".:${PATH}"
+endif
+
+alias path 'echo $PATH | ddown'
+
+###############################################################################
+# Java
+###############################################################################
+
+#setenv J2EE_HOME    'C:\Java\SDK'
+#setenv CLASSPATH    ".;${J2EE_HOME}\\lib\\j2ee.jar;${J2EE_HOME}\\lib\\locale"
+
+###############################################################################
+# Prompt
+###############################################################################
+
+source ~/.prompt.tcsh
+
+###############################################################################
+# tcsh settings
+###############################################################################
+
+set     autocorrect=1
+set     autolist=ambiguous
+unset   autologout
+#set     complete=enhance
+set     correct=cmd
+set     echo_style=both
+#set     ellipsis
+set     fignore=(.o \~ .suo .user .ncb)
+#set     histdup=erase
+set     history=100
+unset   ignoreeof
+set     listjobs=long
+set     listmaxrows=23
+#set     noglob
+set     notify=1
+set     rmstar=1
+set     noding
+#set    savehist=( $history merge )
+#set    showdots=1
+#set    symlinks=expand
+#set     cdpath='~/My\ Documents/Visual\ Studio\ Projects/'
+
+# Reset the prompt before each command so git branch determination magic can happen
+alias precmd 'echo; source ~/.prompt.tcsh'
+
+###############################################################################
+# Command Auto-completions
+###############################################################################
+
+complete man 'p/*/c/'
+complete where 'p/*/c/'
+complete which 'p/*/c/'
+
+###############################################################################
+# Editors
+###############################################################################
+
+# Note: Windows gvim can't resolve cygwin style paths (without using
+# cygpath...), so to edit a file that is outside the current directory you must
+# cd to the directory of the desired file then edit it.  (I'm not using the
+# cygwin distro's gvim because it requires an X server, which I refuse to do...)
+
+alias gvim                '/cygdrive/c/Program\ Files\ \(x86\)/Vim/vim73/gvim.exe \!* &'
+
+###############################################################################
+# Environment file shortcuts
+###############################################################################
+
+alias ee                  'gvim `cygpath -w ~/.tcshrc`'
+alias se                  'source ~/.tcshrc'
+alias ep                  'gvim `cygpath -w ~/.prompt.tcsh`'
+alias sp                  'source ~/.prompt.tcsh'
+alias ev                  "gvim 'c:\\program\ files\ (x86)\\Vim\\vim73\\vimrc_example.vim'"
+
+###############################################################################
+# ls shortcuts
+###############################################################################
+
+alias lf                  'ls --color'
+alias la                  'lf -a'
+alias ll                  'lf -l'
+alias lla                 'lf -la'
+alias llrt                'lf -lart'
+alias l1                  'lf -a1'
+
+###############################################################################
+# Other shortcuts
+###############################################################################
+
+alias open                'cygstart'
+alias ii                  'open'
+alias ddown               "tr ':' '\n' | tr ';' '\n'"
+alias p                   'less -fiMQ'
+alias h                   'history'
+alias rgrep               'find . -print |& grep -v -i "\.dll" |& grep -v -i "\.exe" |& xargs grep \!* |& grep -v "grep:" |& grep -v "Binary file.*matches" | grep -v "\.svn"'
+#alias rgrep               'recursiveGrep.pl'
+alias srch                'find . -print | grep \!*'
+alias grepfiles           'cut -d: -f1 | grep -v "Binary file" | sort | uniq'
+alias nocomments          "grep -v ':[[:space:]]*//'" 
+alias nobin               "grep -v 'grep:' | grep -v 'Binary file'"
+alias nows                "noWhitespace.pl"
+alias dt                  'sgdm.exe'
+
+###############################################################################
+# cd shortcuts
+###############################################################################
+
+alias up                  'cd ../\!*'
+alias up2                 'cd ../../\!*'
+alias up3                 'cd ../../../\!*'
+alias up4                 'cd ../../../../\!*'
+alias up5                 'cd ../../../../../\!*'
+alias up6                 'cd ../../../../../../\!*'
+alias up7                 'cd ../../../../../../../\!*'
+alias back                'cd -'
+
+alias cygwin              'cd $DROPBOX/DevelopmentTools/Cygwin'
+
+alias c                   'cd /cygdrive/c/'
+#alias g                   'cd /cygdrive/g/'
+#alias z                   'cd /cygdrive/z/'
+
+alias chome               'c; cd Home'
+#alias ghome               'cd /cygdrive/g/Home'
+#alias mydocs              'cd /cygdrive/c/Documents\ and\ Settings/awhite/My\ Documents/'
+alias mydocs              'c; cd Users/awhite/My\ Documents/'
+alias docs                'mydocs'
+alias desktop             'c; cd Users/awhite/Desktop/'
+alias temp                'c; cd TEMP'
+alias prog                'c; Program\ Files/'
+alias progx86             'c; Program\ Files\ \(x86\)/'
+#alias workspace           'cd /cygdrive/c/Home/workspace'     
+alias tfs                 'c; cd TFS'
+
+###############################################################################
+# git shortcuts
+###############################################################################
+
+alias eg                  'gvim `cygpath -w ~/.gitconfig`'
+
+#alias gs                  'git status'
+#alias gsu                 'git submodule update'
+#alias gd                  'git difftool'
+
+alias githome             'c; cd Home/git'
+alias am                  'githome; cd bluedot/am'
+alias maps                'githome; cd bluedot/maps4apps'
+alias mcore               'githome; cd bluedot/mcore'
+alias imwm                'githome; cd bluedot/norfolk-southern-imwm'
+alias am-ios              'githome; cd bluedot/am-ios'
+alias amval               'githome; cd bdsvalerus/am'

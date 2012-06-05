@@ -1,0 +1,11 @@
+BoldAsFont=no
+Transparency=medium
+OpaqueWhenFocused=no
+CursorType=underscore
+RightClickAction=paste
+Columns=155
+Rows=40
+PgUpDnScroll=yes
+Font=Consolas
+FontHeight=11
+CursorColour=0,255,64

@@ -1,0 +1,49 @@
+[user]
+    name = Andy White
+    email = greatwhitehope@gmail.com
+
+[color]
+    branch = auto
+    diff = auto
+    interactive = auto
+    status = auto
+
+[core]
+    #editor = 'c:/program files/vim/vim72/gvim.exe'
+    editor = /cygdrive/c/Program\\ Files\\ \\(x86\\)/Vim/vim73/gvim.exe
+    autocrlf = true
+
+[alias]
+    s = status
+    a = add
+    b = branch
+    co = checkout
+    ci = commit
+    d = diff
+    dt = difftool
+    m = merge
+    mt = mergetool
+    sm = submodule
+
+[diff]
+    #external = \"c:/Program Files (x86)/git/cmd/git-diffmerge-diff.sh\"
+    #guitool = kdiff3
+    tool = diffmerge
+    guitool = diffmerge
+
+[difftool]
+    prompt = false
+
+[difftool "diffmerge"]
+    #cmd = \"~/bin/git-diffmerge-difftool.sh\" "$(cygpath -w $LOCAL)" \"$REMOTE\"
+    cmd = \"c:/Program Files/SourceGear/Common/DiffMerge/sgdm.exe\" "$(cygpath -w \"$LOCAL\")" "\"${REMOTE}\"" --title1="Old" --title2="\"New $REMOTE\""
+
+[merge]
+    tool = diffmerge
+
+[mergetool "diffmerge"]
+    #cmd = \"C:/Program Files (x86)/git/cmd/git-diffmerge-merge.sh\" \"$BASE\" \"$LOCAL\" \"$REMOTE\" \"$MERGED\"
+    #cmd = \"/cygdrive/c/Home/Cygwin/users/awhite/bin/git-diffmerge-merge.sh\" \"$BASE\" \"$LOCAL\" \"$REMOTE\" \"$MERGED\"
+    cmd = \"c:/Program Files/SourceGear/Common/DiffMerge/sgdm.exe\" --merge --result="$MERGED" "$LOCAL" "$BASE" "$REMOTE" --title1="\"Current Branch\"" --title2="\"Result: $MERGED\"" --title3="\"Other Branch\""
+    trustExitCode = false
+
