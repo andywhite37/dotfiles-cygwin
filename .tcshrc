@@ -76,17 +76,23 @@ complete which 'p/*/c/'
 # cd to the directory of the desired file then edit it.  (I'm not using the
 # cygwin distro's gvim because it requires an X server, which I refuse to do...)
 
-alias gvim                '/cygdrive/c/Program\ Files\ \(x86\)/Vim/vim73/gvim.exe \!* &'
+alias gvim                '/cygdrive/c/Program\ Files\ \(x86\)/Vim/vim73/gvim.exe "`cygpath -w \!*`" &'
 
 ###############################################################################
 # Environment file shortcuts
 ###############################################################################
 
-alias ee                  'gvim `cygpath -w ~/.tcshrc`'
+alias ee                  'gvim ~/.tcshrc'
 alias se                  'source ~/.tcshrc'
-alias ep                  'gvim `cygpath -w ~/.prompt.tcsh`'
+alias ep                  'gvim ~/.prompt.tcsh'
 alias sp                  'source ~/.prompt.tcsh'
-alias ev                  "gvim 'c:\\program\ files\ (x86)\\Vim\\vim73\\vimrc_example.vim'"
+alias ev                  'gvim ~/vimrc_example.vim'
+
+###############################################################################
+# apt-cyg (cygwin command line package manager)
+###############################################################################
+
+alias ac                  'apt-cyg'
 
 ###############################################################################
 # ls shortcuts
@@ -94,7 +100,7 @@ alias ev                  "gvim 'c:\\program\ files\ (x86)\\Vim\\vim73\\vimrc_ex
 
 alias lf                  'ls --color'
 alias la                  'lf -a'
-alias ll                  'lf -l'
+alias ll                  'lf -la'
 alias lla                 'lf -la'
 alias llrt                'lf -lart'
 alias l1                  'lf -a1'
@@ -149,10 +155,17 @@ alias progx86             'c; Program\ Files\ \(x86\)/'
 alias tfs                 'c; cd TFS'
 
 ###############################################################################
+# website shortcuts
+###############################################################################
+
+alias github              'open https://github.com/organizations/bluedot'
+alias teamcity            'open http://buildserver65'
+
+###############################################################################
 # git shortcuts
 ###############################################################################
 
-alias eg                  'gvim `cygpath -w ~/.gitconfig`'
+alias eg                  'gvim ~/.gitconfig'
 
 #alias gs                  'git status'
 #alias gsu                 'git submodule update'

@@ -1,7 +1,7 @@
 BoldAsFont=no
 Transparency=medium
 OpaqueWhenFocused=no
-CursorType=underscore
+CursorType=block
 RightClickAction=paste
 Columns=155
 Rows=40
