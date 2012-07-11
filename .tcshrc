@@ -171,7 +171,7 @@ alias eg                  'gvim ~/.gitconfig'
 #alias gsu                 'git submodule update'
 #alias gd                  'git difftool'
 
-alias githome             'c; cd Home/git'
+alias githome             'c; cd Home/dev'
 alias am                  'githome; cd bluedot/am'
 alias maps                'githome; cd bluedot/maps4apps'
 alias mcore               'githome; cd bluedot/mcore'
