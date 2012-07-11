@@ -4,7 +4,7 @@
 # Environment variables
 ###############################################################################
 
-setenv HOME '/home/awhite'
+setenv HOME "/home/${USER}"
 setenv DROPBOX '/cygdrive/c/Home/Dropbox'
 
 # Add to path (only for cygwin command-line use)
@@ -145,9 +145,9 @@ alias c                   'cd /cygdrive/c/'
 alias chome               'c; cd Home'
 #alias ghome               'cd /cygdrive/g/Home'
 #alias mydocs              'cd /cygdrive/c/Documents\ and\ Settings/awhite/My\ Documents/'
-alias mydocs              'c; cd Users/awhite/My\ Documents/'
+alias mydocs              'c; cd Users/${USER}/My\ Documents/'
 alias docs                'mydocs'
-alias desktop             'c; cd Users/awhite/Desktop/'
+alias desktop             'c; cd Users/${USER}/Desktop/'
 alias temp                'c; cd TEMP'
 alias prog                'c; Program\ Files/'
 alias progx86             'c; Program\ Files\ \(x86\)/'
@@ -178,3 +178,4 @@ alias mcore               'githome; cd bluedot/mcore'
 alias imwm                'githome; cd bluedot/norfolk-southern-imwm'
 alias am-ios              'githome; cd bluedot/am-ios'
 alias amval               'githome; cd bdsvalerus/am'
+alias amjpl               'githome; cd bdsjpl/am'
