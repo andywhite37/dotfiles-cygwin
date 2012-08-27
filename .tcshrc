@@ -17,6 +17,11 @@ endif
 
 alias path 'echo $PATH | ddown'
 
+# For XWindows stuff like gitk, etc.
+# Note: before using XWindows programs, run startxwin first to start the X Server
+setenv DISPLAY 'localhost:0.0'
+startxwin
+
 ###############################################################################
 # Java
 ###############################################################################
@@ -76,17 +81,19 @@ complete which 'p/*/c/'
 # cd to the directory of the desired file then edit it.  (I'm not using the
 # cygwin distro's gvim because it requires an X server, which I refuse to do...)
 
-alias gvim                '/cygdrive/c/Program\ Files\ \(x86\)/Vim/vim73/gvim.exe "`cygpath -w \!*`" &'
+#alias gvim                '/cygdrive/c/Program\ Files\ \(x86\)/Vim/vim73/gvim.exe "`cygpath -w \!*`" &'
+
+setenv EDITOR '/usr/bin/gvim'
 
 ###############################################################################
 # Environment file shortcuts
 ###############################################################################
 
-alias ee                  'gvim ~/.tcshrc'
+alias ee                  '$EDITOR ~/.tcshrc'
 alias se                  'source ~/.tcshrc'
-alias ep                  'gvim ~/.prompt.tcsh'
+alias ep                  '$EDITOR ~/.prompt.tcsh'
 alias sp                  'source ~/.prompt.tcsh'
-alias ev                  'gvim ~/vimrc_example.vim'
+alias ev                  '$EDITOR ~/vimrc_example.vim'
 
 ###############################################################################
 # apt-cyg (cygwin command line package manager)
@@ -165,7 +172,7 @@ alias teamcity            'open http://buildserver65'
 # git shortcuts
 ###############################################################################
 
-alias eg                  'gvim ~/.gitconfig'
+alias eg                  '$EDITOR ~/.gitconfig'
 
 #alias gs                  'git status'
 #alias gsu                 'git submodule update'

@@ -11,7 +11,7 @@
 [core]
     #editor = 'c:/program files/vim/vim72/gvim.exe'
     #editor = /cygdrive/c/Program\\ Files\\ \\(x86\\)/Vim/vim73/gvim.exe
-    editor = /usr/bin/vim
+    editor = /usr/bin/gvim -f
     autocrlf = true
 
 [alias]

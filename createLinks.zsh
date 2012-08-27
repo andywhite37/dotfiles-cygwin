@@ -42,10 +42,11 @@ items+=.minttyrc
 items+=.profile
 #items+=.ackrc
 #items+=.hushlogin
+items+=.startxwinrc
 
 # Vim files
 #echo "Vim files"
-#items+=.vimrc
+items+=.vimrc
 #items+=.vimrc.before
 #items+=.vimrc.after
 #items+=.gvimrc.before
