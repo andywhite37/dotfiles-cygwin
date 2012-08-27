@@ -10,7 +10,8 @@
 
 [core]
     #editor = 'c:/program files/vim/vim72/gvim.exe'
-    editor = /cygdrive/c/Program\\ Files\\ \\(x86\\)/Vim/vim73/gvim.exe
+    #editor = /cygdrive/c/Program\\ Files\\ \\(x86\\)/Vim/vim73/gvim.exe
+    editor = /usr/bin/vim
     autocrlf = true
 
 [alias]
@@ -24,6 +25,9 @@
     m = merge
     mt = mergetool
     sm = submodule
+    hist = log --pretty=format:'%H %d | %ad | %an - %s' --graph --date=short
+    type = cat-file -t
+    dump = cat-file -p
 
 [diff]
     #external = \"c:/Program Files (x86)/git/cmd/git-diffmerge-diff.sh\"
