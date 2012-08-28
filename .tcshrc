@@ -78,9 +78,7 @@ complete which 'p/*/c/'
 
 # Note: Windows gvim can't resolve cygwin style paths (without using
 # cygpath...), so to edit a file that is outside the current directory you must
-# cd to the directory of the desired file then edit it.  (I'm not using the
-# cygwin distro's gvim because it requires an X server, which I refuse to do...)
-
+# cd to the directory of the desired file then edit it.
 #alias gvim                '/cygdrive/c/Program\ Files\ \(x86\)/Vim/vim73/gvim.exe "`cygpath -w \!*`" &'
 
 setenv EDITOR '/usr/bin/gvim'
@@ -93,12 +91,14 @@ alias ee                  '$EDITOR ~/.tcshrc'
 alias se                  'source ~/.tcshrc'
 alias ep                  '$EDITOR ~/.prompt.tcsh'
 alias sp                  'source ~/.prompt.tcsh'
-alias ev                  '$EDITOR ~/vimrc_example.vim'
+#alias ev                  '$EDITOR ~/vimrc_example.vim'
+alias ev                  '$EDITOR ~/.vimrc'
 
 ###############################################################################
 # apt-cyg (cygwin command line package manager)
 ###############################################################################
 
+alias cygsetup            '/cygdrive/c/Home/Downloads/Cygwin/setup.exe &'
 alias ac                  'apt-cyg'
 
 ###############################################################################

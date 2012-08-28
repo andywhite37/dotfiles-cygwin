@@ -66,6 +66,7 @@ if &t_Co > 2 || has("gui_running")
   syntax on
   set hlsearch
   colo torte
+  set guifont=Consolas\ 12
 endif
 
 " Only do this part when compiled with support for autocommands.
