@@ -6,6 +6,7 @@
 
 setenv HOME "/home/${USER}"
 setenv DROPBOX '/cygdrive/c/Home/Dropbox'
+setenv DESKTOP "/cygdrive/c/Users/${USER}/Desktop"
 
 # Add to path (only for cygwin command-line use)
 #setenv PATH     ".:/cygdrive/c/Home/cygbin/:${HOME}/bin:${PATH}"
