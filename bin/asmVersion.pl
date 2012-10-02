@@ -1,6 +1,9 @@
 #! /usr/bin/perl -w
+
 use strict;
 use warnings;
+
+sub usage;
 
 my $verbose = 0;
 my $onlyBlueDotAssemblies = 0;
@@ -24,6 +27,10 @@ if ($#ARGV + 1 > 0)
         {
             print "Show ildasm output is on\n";
             $showIldasmOutput = 1;
+        }
+        elsif ("$arg" eq "-h")
+        {
+            &usage;
         }
     }
 }
@@ -76,4 +83,23 @@ foreach my $file (@files)
             last;
         }
     }
+}
+
+sub usage()
+{
+    print "Usage: asmVersion.pl [-v] [-i] [-b] | [-h]\n";
+    print "\n";
+
+    print "Attempts to display the assembly version for all assemblies from the current directory and recursively downward.\n";
+    print "\n";
+
+    print "Options:\n";
+    print "\n";
+    print "-b - Only show assemblies with \"Blue Dot\" in the file name\n";
+    print "-v - Show verbose output\n";
+    print "-i - Show ildasm.exe output in full\n";
+    print "-h - Show this usage message\n";
+    print "\n";
+
+    exit;
 }

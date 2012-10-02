@@ -26,8 +26,12 @@
     mt = mergetool
     sm = submodule
     hist = log --pretty=format:'%H %d | %ad | %an - %s' --graph --date=short
+    log2 = log --max-count=2
     type = cat-file -t
     dump = cat-file -p
+
+    # Diff the files from the last commit against the previous commit
+    dtc = difftool HEAD~ HEAD
 
 [diff]
     #external = \"c:/Program Files (x86)/git/cmd/git-diffmerge-diff.sh\"
