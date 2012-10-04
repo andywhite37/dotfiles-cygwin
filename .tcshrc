@@ -175,6 +175,9 @@ alias teamcity            'open http://buildserver65'
 
 alias eg                  '$EDITOR ~/.gitconfig'
 
+alias mkgitignore         'curl https://raw.github.com/github/gitignore/master/\!*.gitignore > .gitignore'
+alias mkcsgitignore       'mkgitignore CSharp'
+
 #alias gs                  'git status'
 #alias gsu                 'git submodule update'
 #alias gd                  'git difftool'
@@ -192,3 +195,4 @@ alias prax                'githome; cd bdspraxair/am'
 alias twg                 'githome; cd andywhite37_bitbucket/two-win-global'
 alias iphone              'githome; cd bluedot/iphone'
 alias omni                'githome; cd bluedot/omni-api'
+alias ekpc                'githome; cd bluedot/ekpc-work'
