@@ -42,8 +42,8 @@ set expandtab
 set shiftwidth=4
 set tabstop=4
 set autoread
-set lines=40
-set columns=120
+set lines=50
+set columns=140
 
 " For Win32 GUI: remove 't' flag from 'guioptions': no tearoff menu entries
 " let &guioptions = substitute(&guioptions, "t", "", "g")

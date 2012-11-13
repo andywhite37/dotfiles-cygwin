@@ -77,12 +77,12 @@ complete which 'p/*/c/'
 # Editors
 ###############################################################################
 
+setenv EDITOR '/usr/bin/gvim'
+
 # Note: Windows gvim can't resolve cygwin style paths (without using
 # cygpath...), so to edit a file that is outside the current directory you must
 # cd to the directory of the desired file then edit it.
-#alias gvim                '/cygdrive/c/Program\ Files\ \(x86\)/Vim/vim73/gvim.exe "`cygpath -w \!*`" &'
-
-setenv EDITOR '/usr/bin/gvim'
+alias gvimw               'env HOME="" /cygdrive/c/Program\ Files\ \(x86\)/Vim/vim73/gvim.exe "`cygpath -w \!*`" &'
 
 ###############################################################################
 # Environment file shortcuts
@@ -130,6 +130,8 @@ alias nocomments          "grep -v ':[[:space:]]*//'"
 alias nobin               "grep -v 'grep:' | grep -v 'Binary file'"
 alias nows                "noWhitespace.pl"
 alias dt                  'sgdm.exe'
+
+alias chrome              '/cygdrive/c/Program\ Files\ \(x86\)/Google/Chrome/Application/chrome.exe --allow-file-access-from-files &'
 
 ###############################################################################
 # cd shortcuts
