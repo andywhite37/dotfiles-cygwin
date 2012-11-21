@@ -130,8 +130,10 @@ alias nocomments          "grep -v ':[[:space:]]*//'"
 alias nobin               "grep -v 'grep:' | grep -v 'Binary file'"
 alias nows                "noWhitespace.pl"
 alias dt                  'sgdm.exe'
+alias ff                  'find . -type f -print'
 
 alias chrome              '/cygdrive/c/Program\ Files\ \(x86\)/Google/Chrome/Application/chrome.exe --allow-file-access-from-files &'
+alias chrome2             '/cygdrive/c/Users/awhite/AppData/Local/Google/Chrome/Application/chrome.exe --allow-file-access-from-files &'
 
 ###############################################################################
 # cd shortcuts
@@ -153,6 +155,7 @@ alias c                   'cd /cygdrive/c/'
 #alias z                   'cd /cygdrive/z/'
 
 alias chome               'c; cd Home'
+alias dl                  'cd /cygdrive/c/Home/Downloads'
 #alias ghome               'cd /cygdrive/g/Home'
 #alias mydocs              'cd /cygdrive/c/Documents\ and\ Settings/awhite/My\ Documents/'
 alias mydocs              'c; cd Users/${USER}/My\ Documents/'
@@ -198,3 +201,4 @@ alias twg                 'githome; cd andywhite37_bitbucket/two-win-global'
 alias iphone              'githome; cd bluedot/iphone'
 alias omni                'githome; cd bluedot/omni-api'
 alias ekpc                'githome; cd bluedot/ekpc-work'
+alias ltl                 'githome; cd andywhite37/ltl-pd-android'
