@@ -84,6 +84,8 @@ setenv EDITOR '/usr/bin/gvim'
 # cd to the directory of the desired file then edit it.
 alias gvimw               'env HOME="" /cygdrive/c/Program\ Files\ \(x86\)/Vim/vim73/gvim.exe "`cygpath -w \!*`" &'
 
+alias npp                 '/cygdrive/c/Program\ Files\ \(x86\)/Notepad++/notepad++.exe \!*'
+
 ###############################################################################
 # Environment file shortcuts
 ###############################################################################
@@ -131,6 +133,7 @@ alias nobin               "grep -v 'grep:' | grep -v 'Binary file'"
 alias nows                "noWhitespace.pl"
 alias dt                  'sgdm.exe'
 alias ff                  'find . -type f -print'
+alias ffg                 'find . -type f -print | grep \!*'
 
 alias chrome              '/cygdrive/c/Program\ Files\ \(x86\)/Google/Chrome/Application/chrome.exe --allow-file-access-from-files &'
 alias chrome2             '/cygdrive/c/Users/awhite/AppData/Local/Google/Chrome/Application/chrome.exe --allow-file-access-from-files &'

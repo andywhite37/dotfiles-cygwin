@@ -45,7 +45,7 @@
 
 [difftool "diffmerge"]
     #cmd = \"~/bin/git-diffmerge-difftool.sh\" "$(cygpath -w $LOCAL)" \"$REMOTE\"
-    cmd = \"c:/Program Files/SourceGear/Common/DiffMerge/sgdm.exe\" "$(cygpath -w \"$LOCAL\")" "\"${REMOTE}\"" --title1="Old" --title2="\"New $REMOTE\""
+    cmd = \"c:/Program Files/SourceGear/Common/DiffMerge/sgdm.exe\" \"$(cygpath -w \"$LOCAL\")\" "\"${REMOTE}\"" --title1="Old" --title2="\"New $REMOTE\""
 
 [merge]
     tool = diffmerge

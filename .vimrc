@@ -90,6 +90,7 @@ if has("autocmd")
     au BufNewFile,BufRead *.msbuild set filetype=xml
     au BufNewFile,BufRead *.log set filetype=log4j
     au BufNewFile,BufRead *.ps1 set filetype=ps1
+    au BufNewFile,BufRead *.json set filetype=javascript
   
 
   " When editing a file, always jump to the last known cursor position.
