@@ -138,6 +138,8 @@ alias ffg                 'find . -type f -print | grep \!*'
 alias chrome              '/cygdrive/c/Program\ Files\ \(x86\)/Google/Chrome/Application/chrome.exe --allow-file-access-from-files &'
 alias chrome2             '/cygdrive/c/Users/awhite/AppData/Local/Google/Chrome/Application/chrome.exe --allow-file-access-from-files &'
 
+alias ws                  '/cygdrive/c/Program\ Files\ \(x86\)/JetBrains/WebStorm\ 5.0.4/bin/WebStorm.exe &'
+
 ###############################################################################
 # cd shortcuts
 ###############################################################################
@@ -190,6 +192,9 @@ alias mkcsgitignore       'mkgitignore CSharp'
 #alias gsu                 'git submodule update'
 #alias gd                  'git difftool'
 
+alias gfo                  'git fetch origin'
+alias gmom                 'git merge origin/master'
+
 alias githome             'c; cd Home/dev'
 alias dev                 'c; cd Home/dev'
 alias am                  'githome; cd bluedot/am'
@@ -205,3 +210,9 @@ alias iphone              'githome; cd bluedot/iphone'
 alias omni                'githome; cd bluedot/omni-api'
 alias ekpc                'githome; cd bluedot/ekpc-work'
 alias ltl                 'githome; cd andywhite37/ltl-pd-android'
+alias 311                 'githome; cd bluedot/iphone'
+alias cyan                'githome; cd bluedot/cyan-server'
+alias cyans               'cyan'
+alias cyana               'githome; cd bluedot/cyan-client-engine-android'
+alias cyanc               'githome; cd bluedot/cyan-client-web-core'
+alias cyand               'githome; cd bluedot/cyan-client-web-distribution'
