@@ -14,6 +14,7 @@ setenv DESKTOP "/cygdrive/c/Users/${USER}/Desktop"
 if ("${PATH}" !~ "${HOME}/bin"*) then
     setenv PATH     "${HOME}/bin:${PATH}"
     setenv PATH     ".:${PATH}"
+    #setenv PATH     "${PATH}:/cygdrive/c/Home/dev/bluedot/cyan-client-web-distribution/submodules/cyan-client-web-core/node_modules/phantomjs/lib/phantom"
 endif
 
 alias path 'echo $PATH | ddown'
@@ -216,3 +217,5 @@ alias cyans               'cyan'
 alias cyana               'githome; cd bluedot/cyan-client-engine-android'
 alias cyanc               'githome; cd bluedot/cyan-client-web-core'
 alias cyand               'githome; cd bluedot/cyan-client-web-distribution'
+alias cyanw               'githome; cd bluedot/cyan-client-engine-winrt'
+alias cyanq               'githome; cd bluedot/cyan-client-web-qualcomm'

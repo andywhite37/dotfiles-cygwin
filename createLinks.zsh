@@ -47,6 +47,7 @@ items+=.startxwinrc
 # Vim files
 #echo "Vim files"
 items+=.vimrc
+items+=.vsvimrc
 #items+=.vimrc.before
 #items+=.vimrc.after
 #items+=.gvimrc.before
