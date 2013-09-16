@@ -26,7 +26,9 @@
     mt = mergetool
     sm = submodule
     cc = rev-parse HEAD
+    desc = describe --long
     hist = log --pretty=format:'%H %d | %ad | %an - %s' --graph --date=short
+    h = log --pretty=format:'%H %d | %ad | %an - %s' --graph --date=short --all
     log2 = log --max-count=2
     type = cat-file -t
     dump = cat-file -p

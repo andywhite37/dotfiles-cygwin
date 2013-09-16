@@ -8,6 +8,15 @@ setenv HOME "/home/${USER}"
 setenv DROPBOX '/cygdrive/c/Home/Dropbox'
 setenv DESKTOP "/cygdrive/c/Users/${USER}/Desktop"
 
+setenv FILES_DIR '/cygdrive/c/'
+
+# Work PC
+if (`uname -n` == 'andy') then
+    setenv FILES_DIR '/cygdrive/e/'
+endif
+
+#echo "FILES_DIR = ${FILES_DIR}"
+
 # Add to path (only for cygwin command-line use)
 #setenv PATH     ".:/cygdrive/c/Home/cygbin/:${HOME}/bin:${PATH}"
 #setenv PATH     ".:${PATH}"
@@ -87,6 +96,8 @@ alias gvimw               'env HOME="" /cygdrive/c/Program\ Files\ \(x86\)/Vim/v
 
 alias npp                 '/cygdrive/c/Program\ Files\ \(x86\)/Notepad++/notepad++.exe \!*'
 
+alias idea                '/cygdrive/c/Program\ Files\ \(x86\)/JetBrains/IntelliJ\ IDEA\ Community\ Edition\ 12.1/bin/idea.exe'
+
 ###############################################################################
 # Environment file shortcuts
 ###############################################################################
@@ -141,6 +152,9 @@ alias chrome2             '/cygdrive/c/Users/awhite/AppData/Local/Google/Chrome/
 
 alias ws                  '/cygdrive/c/Program\ Files\ \(x86\)/JetBrains/WebStorm\ 5.0.4/bin/WebStorm.exe &'
 
+# TODO: make an alias for this... find the total size of files of a particular extension
+# find . -type f -name "*.js" -exec ls -l {} \; | awk '{ s+=$6 } END { print s }'
+
 ###############################################################################
 # cd shortcuts
 ###############################################################################
@@ -157,21 +171,13 @@ alias back                'cd -'
 alias cygwin              'cd $DROPBOX/DevelopmentTools/Cygwin'
 
 alias c                   'cd /cygdrive/c/'
+alias e                   'cd /cygdrive/e/'
 #alias g                   'cd /cygdrive/g/'
 #alias z                   'cd /cygdrive/z/'
 
-alias chome               'c; cd Home'
-alias dl                  'cd /cygdrive/c/Home/Downloads'
-#alias ghome               'cd /cygdrive/g/Home'
-#alias mydocs              'cd /cygdrive/c/Documents\ and\ Settings/awhite/My\ Documents/'
-alias mydocs              'c; cd Users/${USER}/My\ Documents/'
-alias docs                'mydocs'
+alias dl                  'cd ${FILES_HOME}/Home/Downloads'
 alias desktop             'c; cd Users/${USER}/Desktop/'
-alias temp                'c; cd TEMP'
-alias prog                'c; Program\ Files/'
-alias progx86             'c; Program\ Files\ \(x86\)/'
-#alias workspace           'cd /cygdrive/c/Home/workspace'     
-alias tfs                 'c; cd TFS'
+alias temp                'cd ${FILES_HOME}/temp'
 
 ###############################################################################
 # website shortcuts
@@ -195,9 +201,11 @@ alias mkcsgitignore       'mkgitignore CSharp'
 
 alias gfo                  'git fetch origin'
 alias gmom                 'git merge origin/master'
+alias gmod                 'git merge origin/develop'
+alias gmor                 'git merge origin/release'
 
-alias githome             'c; cd Home/dev'
-alias dev                 'c; cd Home/dev'
+alias githome             'cd ${FILES_DIR}/Home/dev'
+alias dev                 'githome'
 alias am                  'githome; cd bluedot/am'
 alias maps                'githome; cd bluedot/maps4apps'
 alias mcore               'githome; cd bluedot/mcore'
@@ -212,10 +220,14 @@ alias omni                'githome; cd bluedot/omni-api'
 alias ekpc                'githome; cd bluedot/ekpc-work'
 alias ltl                 'githome; cd andywhite37/ltl-pd-android'
 alias 311                 'githome; cd bluedot/iphone'
-alias cyan                'githome; cd bluedot/cyan-server'
-alias cyans               'cyan'
+
+alias cyans               'githome; cd bluedot/cyan-server'
 alias cyana               'githome; cd bluedot/cyan-client-engine-android'
+alias cyanw               'githome; cd bluedot/cyan-client-engine-winrt'
 alias cyanc               'githome; cd bluedot/cyan-client-web-core'
 alias cyand               'githome; cd bluedot/cyan-client-web-distribution'
-alias cyanw               'githome; cd bluedot/cyan-client-engine-winrt'
+alias cyanb               'githome; cd bluedot/cyan-client-web-berry'
+alias cyano               'githome; cd bluedot/cyan-client-web-oraclewm'
 alias cyanq               'githome; cd bluedot/cyan-client-web-qualcomm'
+alias cyanm               'githome; cd bluedot/cyan-client-web-mainpac'
+alias cyann               'githome; cd bluedot/nhs-donor'
