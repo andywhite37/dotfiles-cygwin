@@ -8,6 +8,7 @@ setenv HOME "/home/${USER}"
 setenv DROPBOX '/cygdrive/c/Home/Dropbox'
 setenv DESKTOP "/cygdrive/c/Users/${USER}/Desktop"
 
+# Common root location for storing user files
 setenv FILES_DIR '/cygdrive/c/'
 
 # Work PC
@@ -113,7 +114,6 @@ alias ev                  '$EDITOR ~/.vimrc'
 # apt-cyg (cygwin command line package manager)
 ###############################################################################
 
-alias cygsetup            '/cygdrive/c/Home/Downloads/Cygwin/setup.exe &'
 alias ac                  'apt-cyg'
 
 ###############################################################################
@@ -175,9 +175,9 @@ alias e                   'cd /cygdrive/e/'
 #alias g                   'cd /cygdrive/g/'
 #alias z                   'cd /cygdrive/z/'
 
-alias dl                  'cd ${FILES_HOME}/Home/Downloads'
+alias dl                  'cd ${FILES_DIR}/Home/Downloads'
 alias desktop             'c; cd Users/${USER}/Desktop/'
-alias temp                'cd ${FILES_HOME}/temp'
+alias temp                'cd ${FILES_DIR}/temp'
 
 ###############################################################################
 # website shortcuts
