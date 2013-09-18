@@ -204,6 +204,12 @@ alias gmom                 'git merge origin/master'
 alias gmod                 'git merge origin/develop'
 alias gmor                 'git merge origin/release'
 
+# Fix accidental change from mode 755 to 644 in git (re-add x permission)
+alias gitaddxmode          'git diff --summary | grep --color "mode change 100755 => 100644" | cut -d" " -f7- | xargs -d"\n" chmod +x'
+
+# Fix accidental change from mode 644 to 755 in git (remove x permission)
+alias gitremxmode          'git diff --summary | grep --color "mode change 100755 => 100644" | cut -d" " -f7- | xargs -d"\n" chmod -x'
+
 alias githome             'cd ${FILES_DIR}/Home/dev'
 alias dev                 'githome'
 alias am                  'githome; cd bluedot/am'
