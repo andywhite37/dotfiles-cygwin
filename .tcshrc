@@ -13,7 +13,7 @@ setenv FILES_DIR '/cygdrive/c/'
 
 # Work PC
 if (`uname -n` == 'andy') then
-    setenv FILES_DIR '/cygdrive/e/'
+  setenv FILES_DIR '/cygdrive/e/'
 endif
 
 #echo "FILES_DIR = ${FILES_DIR}"
@@ -22,17 +22,20 @@ endif
 #setenv PATH     ".:/cygdrive/c/Home/cygbin/:${HOME}/bin:${PATH}"
 #setenv PATH     ".:${PATH}"
 if ("${PATH}" !~ "${HOME}/bin"*) then
-    setenv PATH     "${HOME}/bin:${PATH}"
-    setenv PATH     ".:${PATH}"
-    #setenv PATH     "${PATH}:/cygdrive/c/Home/dev/bluedot/cyan-client-web-distribution/submodules/cyan-client-web-core/node_modules/phantomjs/lib/phantom"
+  #setenv PATH     "/cygdrive/c/Program Files/Git/cmd:${PATH}"
+  setenv PATH     "${HOME}/bin:${PATH}"
+  #setenv PATH     ".:${PATH}"
+  #setenv PATH     "${PATH}:/cygdrive/c/Home/dev/bluedot/cyan-client-web-distribution/submodules/cyan-client-web-core/node_modules/phantomjs/lib/phantom"
 endif
 
 alias path 'echo $PATH | ddown'
 
 # For XWindows stuff like gitk, etc.
 # Note: before using XWindows programs, run startxwin first to start the X Server
-setenv DISPLAY 'localhost:0.0'
-startxwin
+#setenv DISPLAY 'localhost:0.0'
+setenv DISPLAY ':0'
+#startxwin
+run xwin -multiwindow -noclipboard -silent-dup-error
 
 ###############################################################################
 # Java
@@ -74,7 +77,7 @@ set     noding
 #set     cdpath='~/My\ Documents/Visual\ Studio\ Projects/'
 
 # Reset the prompt before each command so git branch determination magic can happen
-alias precmd 'echo; source ~/.prompt.tcsh'
+alias precmd 'source ~/.prompt.tcsh'
 
 ###############################################################################
 # Command Auto-completions
@@ -93,7 +96,7 @@ setenv EDITOR '/usr/bin/gvim'
 # Note: Windows gvim can't resolve cygwin style paths (without using
 # cygpath...), so to edit a file that is outside the current directory you must
 # cd to the directory of the desired file then edit it.
-alias gvimw               'env HOME="" /cygdrive/c/Program\ Files\ \(x86\)/Vim/vim73/gvim.exe "`cygpath -w \!*`" &'
+alias gvimw               'env HOME="" /cygdrive/c/Program\ Files\ \(x86\)/Vim/vim74/gvim.exe "`cygpath -w \!*`" &'
 
 alias npp                 '/cygdrive/c/Program\ Files\ \(x86\)/Notepad++/notepad++.exe \!*'
 
@@ -152,8 +155,12 @@ alias chrome2             '/cygdrive/c/Users/awhite/AppData/Local/Google/Chrome/
 
 alias ws                  '/cygdrive/c/Program\ Files\ \(x86\)/JetBrains/WebStorm\ 5.0.4/bin/WebStorm.exe &'
 
+alias dju                 '/cygdrive/e/Home/dev/bluedot/cyan-server/tools/DataJsonUploader/DataJsonUploader/bin/Debug/DataJsonUploader.exe \!*'
+
 # TODO: make an alias for this... find the total size of files of a particular extension
 # find . -type f -name "*.js" -exec ls -l {} \; | awk '{ s+=$6 } END { print s }'
+
+alias iphonedev2          'ssh BDS@172.0.1.124'
 
 ###############################################################################
 # cd shortcuts
@@ -178,6 +185,8 @@ alias e                   'cd /cygdrive/e/'
 alias dl                  'cd ${FILES_DIR}/Home/Downloads'
 alias desktop             'c; cd Users/${USER}/Desktop/'
 alias temp                'cd ${FILES_DIR}/temp'
+
+alias cs                  'cd src/submodules/cyan-server'
 
 ###############################################################################
 # website shortcuts
@@ -237,3 +246,7 @@ alias cyano               'githome; cd bluedot/cyan-client-web-oraclewm'
 alias cyanq               'githome; cd bluedot/cyan-client-web-qualcomm'
 alias cyanm               'githome; cd bluedot/cyan-client-web-mainpac'
 alias cyann               'githome; cd bluedot/nhs-donor'
+alias cyansand            'githome; cd bluedot/cyan-client-web-sandbox'
+alias cyani               'githome; cd bluedot/cyan-infor-eam'
+alias cyanifca            'githome; cd bluedot/cyan-infor-eam/src/mobile/fca'
+alias nhs                 'cyann'

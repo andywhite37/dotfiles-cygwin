@@ -18,6 +18,7 @@
     s = status
     a = add
     b = branch
+    ba = branch -a
     co = checkout
     ci = commit
     d = diff
@@ -32,6 +33,7 @@
     log2 = log --max-count=2
     type = cat-file -t
     dump = cat-file -p
+    fa = fetch --all --prune
 
     # Diff the files from the last commit against the previous commit
     dtc = difftool HEAD~ HEAD

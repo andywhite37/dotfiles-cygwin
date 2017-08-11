@@ -14,6 +14,14 @@ if v:progname =~? "evim"
   finish
 endif
 
+
+" Pathogen
+execute pathogen#infect()
+
+" NERDTree
+"autocmd VimEnter * :NERDTree
+
+
 " Use Vim settings, rather than Vi settings (much better!).
 " This must be first, because it changes other options as a side effect.
 set nocompatible
@@ -41,6 +49,7 @@ set autoindent
 set expandtab
 set shiftwidth=4
 set tabstop=4
+set softtabstop=4
 set autoread
 set lines=40
 set columns=140
@@ -66,7 +75,7 @@ if &t_Co > 2 || has("gui_running")
   syntax on
   set hlsearch
   colo torte
-  set guifont=Consolas\ 12
+  "set guifont=Consolas\ 12
 endif
 
 " Only do this part when compiled with support for autocommands.
@@ -118,3 +127,4 @@ if !exists(":DiffOrig")
   command DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis
 		  \ | wincmd p | diffthis
 endif
+
